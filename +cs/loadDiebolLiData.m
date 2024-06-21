@@ -1,0 +1,10 @@
+function L = loadDiebolLiData()
+xL = load('Data_DieboldLi'); %#ok
+L.dates       = xL.dates;
+L.DataTable   = xL.DataTable; %#ok
+L.Data        = xL.Data;
+L.maturities  = xL.maturities(:);  %#ok ensure a column vector
+L.yields      = xL.DataTable{:,1:17};  % in-sample yields for estimation
+L.dates       = xL.DataTable.Time;      % date stamps
+L.Description = xL.Description;
+L.series      = xL.series;
